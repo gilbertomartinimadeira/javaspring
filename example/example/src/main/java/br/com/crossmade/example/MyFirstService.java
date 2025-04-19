@@ -3,15 +3,19 @@ package br.com.crossmade.example;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.stereotype.Service;
 
 @Service
-@PropertySource("classpath:custom.properties")
+@PropertySources({
+        @PropertySource("classpath:custom.properties"),
+        @PropertySource("classpath:custom-file-2.properties")
+})
 public class MyFirstService {
 
     private final MyFirstClass myFirstClass;
 
-    @Value("Hello Gil")
+    @Value("${my.prop.2}")
     private String customProperty;
 
     @Value("${my.prop}")
