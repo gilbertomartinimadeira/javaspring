@@ -10,11 +10,11 @@ public class JavaApplication {
 
         var myFirstBean = ctx.getBean(MyFirstService.class);
 
-        System.err.println(myFirstBean.tellAStory());
-        System.err.println(myFirstBean.getJavaVersion());
-        System.err.println(myFirstBean.getUserName());
-        System.err.println(myFirstBean.getOSName());
-        System.err.println(myFirstBean.readCustomProperty());
+        System.out.println(myFirstBean.tellAStory());
+
+        System.out.println(myFirstBean.getCustomProperty());
+        System.out.println(myFirstBean.getCustomPropertyFromAnotherFile());
+        System.out.println(myFirstBean.getCustomIntProperty());
 
     }
 }
