@@ -28,4 +28,16 @@ public class MyFirstService {
     public String getJavaVersion() {
         return env.getProperty("java.version");
     }
+
+    public String getUserName() {
+        return env.getProperty("user.name");
+    }
+
+    public String getOSName() {
+        return env.getProperty("os.name");
+    }
+
+    public String readCustomProperty() {
+        return env.getProperty("my.custom.property");
+    }
 }

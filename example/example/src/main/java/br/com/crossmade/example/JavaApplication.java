@@ -12,6 +12,9 @@ public class JavaApplication {
 
         System.err.println(myFirstBean.tellAStory());
         System.err.println(myFirstBean.getJavaVersion());
+        System.err.println(myFirstBean.getUserName());
+        System.err.println(myFirstBean.getOSName());
+        System.err.println(myFirstBean.readCustomProperty());
 
     }
 }
