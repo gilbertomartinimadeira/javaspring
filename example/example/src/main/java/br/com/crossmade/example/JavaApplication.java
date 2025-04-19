@@ -11,6 +11,7 @@ public class JavaApplication {
         var myFirstBean = ctx.getBean(MyFirstService.class);
 
         System.err.println(myFirstBean.tellAStory());
+        System.err.println(myFirstBean.getJavaVersion());
 
     }
 }
