@@ -9,8 +9,7 @@ public class ExampleApplication {
 	public static void main(String[] args) {
 		var ctx = SpringApplication.run(ExampleApplication.class, args);
 
-		var myFirstClass = ctx.getBean(MyFirstClass.class);
-
+		var myFirstClass = ctx.getBean("myFirstClass", MyFirstClass.class);
 		System.out.println(myFirstClass.sayHello());
 	}
 
