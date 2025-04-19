@@ -16,5 +16,7 @@ public class JavaApplication {
         System.out.println(myFirstBean.getCustomPropertyFromAnotherFile());
         System.out.println(myFirstBean.getCustomIntProperty());
 
+        System.out.println(myFirstBean.getApplicationProperty());
+
     }
 }

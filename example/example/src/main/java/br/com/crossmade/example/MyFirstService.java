@@ -1,5 +1,6 @@
 package br.com.crossmade.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -14,6 +15,13 @@ import org.springframework.stereotype.Service;
 public class MyFirstService {
 
     private final MyFirstClass myFirstClass;
+
+    @Value("${my.custom.property}")
+    private String applicationProperty;
+
+    public String getApplicationProperty() {
+        return applicationProperty;
+    }
 
     @Value("${my.prop.2}")
     private String customProperty;
