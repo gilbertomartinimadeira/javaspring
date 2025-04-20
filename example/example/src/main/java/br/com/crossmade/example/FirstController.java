@@ -2,6 +2,7 @@ package br.com.crossmade.example;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -11,6 +12,11 @@ public class FirstController {
     @GetMapping("/hello")
     public String sayHello() {
         return "Hello from my first controller";
+    }
+
+    @GetMapping("/hello/{user-name}")
+    public String pathVar(@PathVariable("user-name") String userName) {
+        return "Hello " + userName;
     }
 
     @GetMapping("/hello-2")
