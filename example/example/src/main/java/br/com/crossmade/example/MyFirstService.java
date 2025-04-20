@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 })
 public class MyFirstService {
 
-    private final MyFirstClass myFirstClass;
+    private MyFirstClass myFirstClass;
 
     @Value("${my.custom.property}")
     private String applicationProperty;
