@@ -8,22 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class JavaApplication {
     public static void main(String[] args) {
-        var app = new SpringApplication(JavaApplication.class);
 
-        app.setDefaultProperties(Collections.singletonMap("spring.profiles.active", "test"));
-
-        var ctx = app.run(args);
-
-        MyFirstService myFirstBean = ctx.getBean(MyFirstService.class);
-
-        System.out.println(myFirstBean.tellAStory());
-
-        System.out.println(myFirstBean.getCustomProperty());
-        System.out.println(myFirstBean.getCustomPropertyFromAnotherFile());
-        System.out.println(myFirstBean.getCustomIntProperty());
-
-        System.out.println(myFirstBean.getApplicationProperty());
-        System.out.println(myFirstBean.getIntProperty());
+        SpringApplication.run(JavaApplication.class, args);
 
     }
 }
