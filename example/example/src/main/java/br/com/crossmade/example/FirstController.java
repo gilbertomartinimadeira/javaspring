@@ -5,18 +5,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 public class FirstController {
 
-    @GetMapping("/hello")
-    public String sayHello() {
-        return "Hello from my first controller";
-    }
+    // @GetMapping("/hello")
+    // public String sayHello() {
+    // return "Hello from my first controller";
+    // }
 
     @GetMapping("/hello/{user-name}")
-    public String pathVar(@PathVariable("user-name") String userName) {
-        return "Hello " + userName;
+    public String pathVar(
+            @PathVariable("user-name") String userName,
+            @RequestParam("q") String q) {
+        return "Hello " + userName + " querystring param: " + q;
     }
 
     @GetMapping("/hello-2")
