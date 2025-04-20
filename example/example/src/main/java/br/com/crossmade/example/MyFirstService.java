@@ -19,6 +19,13 @@ public class MyFirstService {
     @Value("${my.custom.property}")
     private String applicationProperty;
 
+    @Value("${my.custom.int}")
+    private int intProperty;
+
+    public int getIntProperty() {
+        return intProperty;
+    }
+
     public String getApplicationProperty() {
         return applicationProperty;
     }

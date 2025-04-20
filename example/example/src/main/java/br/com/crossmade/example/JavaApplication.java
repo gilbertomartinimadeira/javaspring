@@ -17,6 +17,7 @@ public class JavaApplication {
         System.out.println(myFirstBean.getCustomIntProperty());
 
         System.out.println(myFirstBean.getApplicationProperty());
+        System.out.println(myFirstBean.getIntProperty());
 
     }
 }
