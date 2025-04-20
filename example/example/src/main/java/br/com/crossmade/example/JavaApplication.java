@@ -1,12 +1,18 @@
 package br.com.crossmade.example;
 
+import java.util.Collections;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class JavaApplication {
     public static void main(String[] args) {
-        var ctx = SpringApplication.run(JavaApplication.class, args);
+        var app = new SpringApplication(JavaApplication.class);
+
+        app.setDefaultProperties(Collections.singletonMap("spring.profiles.active", "dev"));
+
+        var ctx = app.run(args);
 
         var myFirstBean = ctx.getBean(MyFirstService.class);
 
