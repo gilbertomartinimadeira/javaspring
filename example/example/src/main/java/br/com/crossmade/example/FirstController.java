@@ -2,10 +2,13 @@ package br.com.crossmade.example;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 
@@ -30,6 +33,17 @@ public class FirstController {
     @GetMapping("/students/{id}")
     public Student findStudentById(@PathVariable Integer id) {
         return _repository.findById(id).orElse(new Student());
+    }
+
+    @GetMapping("/students")
+    public List<Student> listAllStudents() {
+        return _repository.findAll();
+    }
+
+    @GetMapping("/students/search/{student-name}")
+    public List<Student> findStudentsByName(
+            @PathVariable("student-name") String name) {
+        return _repository.findAllByFirstnameContaining(name);
     }
 
 }
