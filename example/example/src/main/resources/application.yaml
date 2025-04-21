@@ -1,0 +1,12 @@
+# spring.profiles.active=dev,test,custom
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo_db
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  output:
+    ansi:
+      enabled: always
