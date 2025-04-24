@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @RestController
 
-public class FirstController {
+public class StudentsController {
     private final StudentRepository _repository;
 
-    public FirstController(StudentRepository repository) {
+    public StudentsController(StudentRepository repository) {
         _repository = repository;
     }
 
