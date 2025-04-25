@@ -22,10 +22,13 @@ public class StudentController {
     }
 
     @PostMapping("/students")
-    public Student createStudent(@RequestBody StudentDto studentDto) {
+    public StudentResponseDto createStudent(@RequestBody StudentDto dto) {
 
-        Student student = toStudent(studentDto);
-        return _repository.save(student);
+        Student student = toStudent(dto);
+
+        _repository.save(student);
+
+        return new StudentResponseDto(dto.firstname(), dto.lastname(), dto.email());
 
     }
 
