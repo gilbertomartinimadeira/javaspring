@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-public class SchoolsController {
+public class SchoolController {
 
     private final SchoolRepository schoolRepository;
 
-    public SchoolsController(SchoolRepository schoolRepository) {
+    public SchoolController(SchoolRepository schoolRepository) {
         this.schoolRepository = schoolRepository;
     }
 

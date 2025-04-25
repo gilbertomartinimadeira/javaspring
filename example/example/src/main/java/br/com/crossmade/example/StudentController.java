@@ -14,22 +14,28 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @RestController
 
-public class StudentsController {
+public class StudentController {
     private final StudentRepository _repository;
 
-    public StudentsController(StudentRepository repository) {
+    public StudentController(StudentRepository repository) {
         _repository = repository;
     }
 
-    @GetMapping("/hello")
-    public String sayHello() {
-        return "Hello from my first controller";
-    }
-
     @PostMapping("/students")
-    public Student createStudent(@RequestBody Student student) {
+    public Student createStudent(@RequestBody StudentDto studentDto) {
+
+        Student student = toStudent(studentDto);
         return _repository.save(student);
 
+    }
+
+    private Student toStudent(StudentDto dto) {
+        var student = new Student(dto.firstname(), dto.lastname(), dto.email(), dto.schoolId());
+        var school = new School();
+        school.setId(dto.schoolId());
+        student.setSchool(school);
+
+        return student;
     }
 
     @GetMapping("/students/{id}")
